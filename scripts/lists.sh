@@ -15,7 +15,7 @@ curl --include --request GET http://localhost:4741/lists/4 \
 
 curl --include --request POST http://localhost:4741/lists \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
+  --header "Authorization: Token token=BAhJIiUwODAzMGVjODEyYWNiZDk4ZDU1MDg5ODAzNGYyMmNjZgY6BkVG--61f7d9eedaaaddaa22aa33fe6e89003752a574c1" \
   --data '{
     "list": {
       "name": "Apps",
@@ -26,11 +26,11 @@ curl --include --request POST http://localhost:4741/lists \
 
   curl --include --request POST http://localhost:4741/lists \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
+    --header "Authorization: Token token=BAhJIiUwODAzMGVjODEyYWNiZDk4ZDU1MDg5ODAzNGYyMmNjZgY6BkVG--61f7d9eedaaaddaa22aa33fe6e89003752a574c1" \
     --data '{
       "list": {
         "name": "Dessert",
-        "party_id": 3
+        "party_id": 1
       }
     }'
 

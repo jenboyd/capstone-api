@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :item_instances, except: [:new, :edit]
+  resources :item_instances, except: [:new, :edit]
+  resources :item_locations, except: [:new, :edit]
   resources :items, except: [:new, :edit]
   resources :lists, except: [:new, :edit]
   resources :parties, except: [:new, :edit]

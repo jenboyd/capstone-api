@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104184015) do
+ActiveRecord::Schema.define(version: 20161104214945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,22 @@ ActiveRecord::Schema.define(version: 20161104184015) do
   end
 
   add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
+
+  create_table "item_instances", force: :cascade do |t|
+    t.integer  "list_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "item_instances", ["item_id"], name: "index_item_instances_on_item_id", using: :btree
+  add_index "item_instances", ["list_id"], name: "index_item_instances_on_list_id", using: :btree
+
+  create_table "items", force: :cascade do |t|
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lists", force: :cascade do |t|
     t.string   "name"
@@ -54,5 +70,7 @@ ActiveRecord::Schema.define(version: 20161104184015) do
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
   add_foreign_key "examples", "users"
+  add_foreign_key "item_instances", "items"
+  add_foreign_key "item_instances", "lists"
   add_foreign_key "lists", "parties"
 end
