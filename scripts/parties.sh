@@ -15,7 +15,7 @@ curl --include --request GET http://localhost:4741/parties/1 \
 
 curl --include --request POST http://localhost:4741/parties \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUwODAzMGVjODEyYWNiZDk4ZDU1MDg5ODAzNGYyMmNjZgY6BkVG--61f7d9eedaaaddaa22aa33fe6e89003752a574c1" \
+  --header "Authorization: Token token=BAhJIiUyY2IwNzQ4OGMxMmFkOTY2ZDg3NDE3MmZkYzNiZDY0ZQY6BkVG--8efa587bac2ec57093a4c278e11d034cc2168b84" \
   --data '{
     "party": {
       "name": "Christmas Party",
@@ -25,7 +25,7 @@ curl --include --request POST http://localhost:4741/parties \
 
   curl --include --request POST http://localhost:4741/parties \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiUwODAzMGVjODEyYWNiZDk4ZDU1MDg5ODAzNGYyMmNjZgY6BkVG--61f7d9eedaaaddaa22aa33fe6e89003752a574c1" \
+    --header "Authorization: Token token=BAhJIiVjZjVlM2U5OWJmMzYxYWY4MWFiNTg5YzRlNDU3M2FmNwY6BkVG--35cd0366e625c6b7545f34190394e6385457e796" \
     --data '{
       "party": {
         "name": "Brunch",
@@ -37,7 +37,7 @@ curl --include --request POST http://localhost:4741/parties \
 
   curl --include --request PATCH http://localhost:4741/parties/1 \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
+    --header "Authorization: Token token=BAhJIiVjZjVlM2U5OWJmMzYxYWY4MWFiNTg5YzRlNDU3M2FmNwY6BkVG--35cd0366e625c6b7545f34190394e6385457e796" \
     --data '{
       "party": {
         "name": "Christmas Party",

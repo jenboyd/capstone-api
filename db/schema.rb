@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104214945) do
+ActiveRecord::Schema.define(version: 20161105181449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "details", force: :cascade do |t|
+    t.integer  "item_detail_id"
+    t.string   "content"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "details", ["item_detail_id"], name: "index_details_on_item_detail_id", using: :btree
 
   create_table "examples", force: :cascade do |t|
     t.text     "text",       null: false
@@ -24,6 +33,14 @@ ActiveRecord::Schema.define(version: 20161104214945) do
   end
 
   add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
+
+  create_table "item_details", force: :cascade do |t|
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "item_details", ["item_id"], name: "index_item_details_on_item_id", using: :btree
 
   create_table "item_instances", force: :cascade do |t|
     t.integer  "list_id"
@@ -69,7 +86,9 @@ ActiveRecord::Schema.define(version: 20161104214945) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
+  add_foreign_key "details", "item_details"
   add_foreign_key "examples", "users"
+  add_foreign_key "item_details", "items"
   add_foreign_key "item_instances", "items"
   add_foreign_key "item_instances", "lists"
   add_foreign_key "lists", "parties"

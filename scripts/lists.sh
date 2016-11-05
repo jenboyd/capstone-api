@@ -15,11 +15,11 @@ curl --include --request GET http://localhost:4741/lists/4 \
 
 curl --include --request POST http://localhost:4741/lists \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUwODAzMGVjODEyYWNiZDk4ZDU1MDg5ODAzNGYyMmNjZgY6BkVG--61f7d9eedaaaddaa22aa33fe6e89003752a574c1" \
+  --header "Authorization: Token token=BAhJIiUyY2IwNzQ4OGMxMmFkOTY2ZDg3NDE3MmZkYzNiZDY0ZQY6BkVG--8efa587bac2ec57093a4c278e11d034cc2168b84" \
   --data '{
     "list": {
       "name": "Apps",
-      "party_id": 2
+      "party_id": 1
 
     }
   }'
