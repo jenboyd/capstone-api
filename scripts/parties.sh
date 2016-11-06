@@ -2,7 +2,7 @@
 #INDEX
 
 curl --include --request GET http://localhost:4741/parties \
-  --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
+  --header "Authorization: Token token=BAhJIiVlY2ZiYTRiODQyNWE5ZDQ0MTFmMjU3Y2VlZjMwZDlmMAY6BkVG--9fe714cfd4465ee743827b37930a91d7f40c95e9" \
 
 
 #SHOW
