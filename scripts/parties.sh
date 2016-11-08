@@ -25,11 +25,11 @@ curl --include --request POST http://localhost:4741/parties \
 
   curl --include --request POST http://localhost:4741/parties \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiVjZjVlM2U5OWJmMzYxYWY4MWFiNTg5YzRlNDU3M2FmNwY6BkVG--35cd0366e625c6b7545f34190394e6385457e796" \
+    --header "Authorization: Token token=BAhJIiU4ODcwODdmZTA3ZTY3NDBhNzE3ZDcyNmZmZWFiMTUxYgY6BkVG--e05dc6e7eddf67d07700346b3839b9028cb083ef" \
     --data '{
       "party": {
-        "name": "Brunch",
-        "date": "20161110"
+        "name": "Picnic",
+        "date": "20170530"
       }
     }'
 
@@ -48,5 +48,5 @@ curl --include --request POST http://localhost:4741/parties \
 
 #DELETE
 
-curl --include --request DELETE http://localhost:4741/parties/1 \
-  --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
+curl --include --request DELETE http://localhost:4741/parties/5 \
+  --header "Authorization: Token token=BAhJIiU4ODcwODdmZTA3ZTY3NDBhNzE3ZDcyNmZmZWFiMTUxYgY6BkVG--e05dc6e7eddf67d07700346b3839b9028cb083ef" \

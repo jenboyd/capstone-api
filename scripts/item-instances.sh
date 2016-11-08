@@ -14,11 +14,11 @@ curl --include --request GET http://localhost:4741/item_instances/1 \
 
 curl --include --request POST http://localhost:4741/item_instances \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUyY2IwNzQ4OGMxMmFkOTY2ZDg3NDE3MmZkYzNiZDY0ZQY6BkVG--8efa587bac2ec57093a4c278e11d034cc2168b84" \
+  --header "Authorization: Token token=BAhJIiU1MGViNmY0ZGExZGRmNDNhOTYxN2NhYjA0ODNmMWMwYwY6BkVG--7252e7297fee48842ca292331d97202662086260" \
   --data '{
     "item_instance": {
       "item_id": 1,
-      "list_id": 1
+      "list_id": 4
 
     }
   }'

@@ -15,10 +15,10 @@ curl --include --request GET http://localhost:4741/lists/4 \
 
 curl --include --request POST http://localhost:4741/lists \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUyY2IwNzQ4OGMxMmFkOTY2ZDg3NDE3MmZkYzNiZDY0ZQY6BkVG--8efa587bac2ec57093a4c278e11d034cc2168b84" \
+  --header "Authorization: Token token=BAhJIiU4ODcwODdmZTA3ZTY3NDBhNzE3ZDcyNmZmZWFiMTUxYgY6BkVG--e05dc6e7eddf67d07700346b3839b9028cb083ef" \
   --data '{
     "list": {
-      "name": "Apps",
+      "name": "Dessert",
       "party_id": 1
 
     }
@@ -26,11 +26,11 @@ curl --include --request POST http://localhost:4741/lists \
 
   curl --include --request POST http://localhost:4741/lists \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiUwODAzMGVjODEyYWNiZDk4ZDU1MDg5ODAzNGYyMmNjZgY6BkVG--61f7d9eedaaaddaa22aa33fe6e89003752a574c1" \
+    --header "Authorization: Token token=BAhJIiU4ODcwODdmZTA3ZTY3NDBhNzE3ZDcyNmZmZWFiMTUxYgY6BkVG--e05dc6e7eddf67d07700346b3839b9028cb083ef" \
     --data '{
       "list": {
-        "name": "Dessert",
-        "party_id": 1
+        "name": "Lunch",
+        "party_id": 6
       }
     }'
 
@@ -41,8 +41,8 @@ curl --include --request POST http://localhost:4741/lists \
     --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
     --data '{
       "list": {
-        "name": "Main Course",
-        "party_id": 3
+        "name": "Lunch",
+        "party_id": 6
 
       }
     }'
@@ -50,5 +50,5 @@ curl --include --request POST http://localhost:4741/lists \
 
 #DELETE
 
-curl --include --request DELETE http://localhost:4741/lists/3 \
-  --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
+curl --include --request DELETE http://localhost:4741/lists/1 \
+  --header "Authorization: Token token=BAhJIiU4ODcwODdmZTA3ZTY3NDBhNzE3ZDcyNmZmZWFiMTUxYgY6BkVG--e05dc6e7eddf67d07700346b3839b9028cb083ef" \
