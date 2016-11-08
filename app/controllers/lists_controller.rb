@@ -1,16 +1,16 @@
-class ListsController < ApplicationController
+class ListsController < OpenReadController
   before_action :set_list, only: [:show, :update, :destroy]
 
-  # GET /lists
-  # GET /lists.json
+  # GET /items
+  # GET /items.json
   def index
     @lists = List.all
 
     render json: @lists
   end
 
-  # GET /lists/1
-  # GET /lists/1.json
+  # GET /items/1
+  # GET /items/1.json
   def show
     render json: @list
   end
@@ -18,7 +18,8 @@ class ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(list_params)
+    # @list = List.new(list_params)
+    @list = current_user.lists.build(list_params)
 
     if @list.save
       render json: @list, status: :created, location: @list
@@ -50,7 +51,8 @@ class ListsController < ApplicationController
   private
 
     def set_list
-      @list = List.find(params[:id])
+      # @list = List.find(params[:id])
+      @list = current_user.lists.find(params[:id])
     end
 
     def list_params
