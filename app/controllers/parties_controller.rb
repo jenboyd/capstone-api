@@ -1,10 +1,11 @@
-class PartiesController < ApplicationController
+class PartiesController < ProtectedController
   before_action :set_party, only: [:show, :update, :destroy]
 
   # GET /parties
   # GET /parties.json
   def index
-    @parties = Party.all
+    # @parties = Party.all
+    @parties = current_user.parties
 
     render json: @parties
   end
@@ -18,7 +19,8 @@ class PartiesController < ApplicationController
   # POST /parties
   # POST /parties.json
   def create
-    @party = Party.new(party_params)
+    # @party = Party.new(party_params)
+    @party = current_user.parties.build(party_params)
 
     if @party.save
       render json: @party, status: :created, location: @party
@@ -50,10 +52,11 @@ class PartiesController < ApplicationController
   private
 
     def set_party
-      @party = Party.find(params[:id])
+      # @party = Party.find(params[:id])
+      @party = current_user.parties.find(params[:id])
     end
 
     def party_params
-      params.require(:party).permit(:name, :date, :location)
+      params.require(:party).permit(:name, :location, :date)
     end
 end

@@ -1,9 +1,5 @@
 class ListSerializer < ActiveModel::Serializer
-  attributes :id, :name, :party, :item_instances
-
-  def item_instances
-    object.item_instances.pluck(:id)
-  end
+  attributes :id, :name, :party
 
   def party
     object.party_id
