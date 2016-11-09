@@ -1,4 +1,4 @@
-class ItemsController < ProtectedController
+class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
 
   # GET /items
@@ -54,6 +54,6 @@ class ItemsController < ProtectedController
     end
 
     def item_params
-      params.require(:item).permit(:content)
+      params.require(:item).permit(:content, :list_id)
     end
 end

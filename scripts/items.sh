@@ -14,22 +14,22 @@ curl --include --request GET http://localhost:4741/items/1 \
 
 curl --include --request POST http://localhost:4741/items \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiUyY2IwNzQ4OGMxMmFkOTY2ZDg3NDE3MmZkYzNiZDY0ZQY6BkVG--8efa587bac2ec57093a4c278e11d034cc2168b84" \
+  --header "Authorization: Token token=BAhJIiU3MzdjOWU4OTcwMjA3MzYzYTJiYjhmMjhhNDY3Y2FlMgY6BkVG--b39fe215b0397292d3ef4e5253480808150de267" \
   --data '{
     "item": {
-      "content": "Dip",
-      "list_id": 6
+      "content": "DIPS",
+      "list_id": 24
 
     }
   }'
 
   curl --include --request POST http://localhost:4741/items \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiUwODAzMGVjODEyYWNiZDk4ZDU1MDg5ODAzNGYyMmNjZgY6BkVG--61f7d9eedaaaddaa22aa33fe6e89003752a574c1" \
+    --header "Authorization: Token token=BAhJIiU0ODI1ZmUyNDA5ZDk3NDMzNWNjZmMxMTQzYWZmYzU0ZAY6BkVG--8a0448843d28e11c571e5a3baee95170af70cbfc" \
     --data '{
       "item": {
         "content": "cheese board",
-        "list_id": 6
+        "list_id": 23
 
       }
     }'
@@ -38,11 +38,11 @@ curl --include --request POST http://localhost:4741/items \
 
   curl --include --request PATCH http://localhost:4741/items/1 \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiUxZjI5YjI2MTA5OTQ5NDA3ZmVlMzM1ZGFlMTNmMmQyZAY6BkVG--c81411672392aff723ed2119137396e3fdf42f74" \
+    --header "Authorization: Token token=BAhJIiU0ODI1ZmUyNDA5ZDk3NDMzNWNjZmMxMTQzYWZmYzU0ZAY6BkVG--8a0448843d28e11c571e5a3baee95170af70cbfc" \
     --data '{
       "item": {
         "content": "Queso Dip",
-        "list_id": 6
+        "list_id": 23
 
       }
     }'
