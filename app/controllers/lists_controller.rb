@@ -1,10 +1,11 @@
-class ListsController < OpenReadController
+class ListsController < ProtectedController
   before_action :set_list, only: [:show, :update, :destroy]
 
   # GET /items
   # GET /items.json
   def index
-    @lists = List.all
+    @lists = current_user.lists
+    # @lists = List.all
 
     render json: @lists
   end
@@ -18,8 +19,9 @@ class ListsController < OpenReadController
   # POST /lists
   # POST /lists.json
   def create
-    # @list = List.new(list_params)
-    @list = current_user.lists.build(list_params)
+    @party = current_user.parties.find(list_params[:party_id])
+    # handle missing party somehow?
+    @list = @party.lists.build(list_params)
 
     if @list.save
       render json: @list, status: :created, location: @list

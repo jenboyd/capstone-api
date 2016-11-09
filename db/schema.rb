@@ -11,47 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108203943) do
+ActiveRecord::Schema.define(version: 20161109190928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "examples", force: :cascade do |t|
-    t.text     "text",       null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "examples", ["user_id"], name: "index_examples_on_user_id", using: :btree
-
   create_table "items", force: :cascade do |t|
-    t.string   "content"
+    t.string   "content",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "list_id"
+    t.integer  "list_id",    null: false
+    t.integer  "user_id",    null: false
   end
 
   add_index "items", ["list_id"], name: "index_items_on_list_id", using: :btree
+  add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
 
   create_table "lists", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "party_id"
-    t.integer  "user_id"
+    t.integer  "party_id",   null: false
+    t.integer  "user_id",    null: false
   end
 
   add_index "lists", ["party_id"], name: "index_lists_on_party_id", using: :btree
   add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
   create_table "parties", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.date     "date"
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
+    t.integer  "user_id",    null: false
   end
 
   add_index "parties", ["user_id"], name: "index_parties_on_user_id", using: :btree
@@ -67,8 +60,8 @@ ActiveRecord::Schema.define(version: 20161108203943) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
-  add_foreign_key "examples", "users"
   add_foreign_key "items", "lists"
+  add_foreign_key "items", "users"
   add_foreign_key "lists", "parties"
   add_foreign_key "lists", "users"
   add_foreign_key "parties", "users"

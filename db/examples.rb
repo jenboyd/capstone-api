@@ -16,3 +16,53 @@
 #                password: 'abc123',
 #                password_confirmation: nil)
 # end
+
+# Users
+%w(jen jeff).each do |name|
+  email = "#{name}@#{name}.com"
+  next if User.exists? email: email
+  User.create!(email: email,
+               password: 'abc123',
+               password_confirmation: nil)
+end
+
+# Parties
+%w(brunch dinner).each do |name|
+  next if Party.exists? name: name
+  Party.create!(name: name,
+                location: 'Boston',
+                user: User.find_by(email: 'jen@jen.com'))
+end
+
+%w(holiday costume).each do |name|
+  next if Party.exists? name: name
+  Party.create!(name: name,
+                location: 'Boston',
+                user: User.find_by(email: 'jeff@jeff.com'))
+end
+
+# Lists
+%w(drinks).each do |name|
+  List.create!(name: name,
+               party: Party.find_by(name: 'brunch'),
+               user: User.find_by(email: 'jen@jen.com'))
+end
+
+%w(apps).each do |name|
+  List.create!(name: name,
+               party: Party.find_by(name: 'costume'),
+               user: User.find_by(email: 'jeff@jeff.com'))
+end
+
+# Items
+%w(beer martinis sangria mimosas).each do |content|
+  Item.create!(content: content,
+               list: List.find_by(name: 'drinks'),
+               user: User.find_by(email: 'jen@jen.com'))
+end
+
+%w(wings chips salsa cheese).each do |content|
+  Item.create!(content: content,
+               list: List.find_by(name: 'apps'),
+               user: User.find_by(email: 'jeff@jeff.com'))
+end

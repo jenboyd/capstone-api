@@ -1,12 +1,11 @@
 class PartySerializer < ActiveModel::Serializer
   attributes :id, :name, :date, :location, :lists, :user
-  belongs_to :user
 
-  def lists
-    object.lists.pluck(:id)
+  def lists # like has_many, but just give me the ids
+    object.lists.pluck(:id) # => [ 1, 2, 3, 4 ]
   end
 
-  def user
-    object.user_id
+  def user # like belongs_to, but just give me the id
+    object.user_id # => 1
   end
 end

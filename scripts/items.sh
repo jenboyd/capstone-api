@@ -14,11 +14,11 @@ curl --include --request GET http://localhost:4741/items/1 \
 
 curl --include --request POST http://localhost:4741/items \
   --header "Content-Type: application/json" \
-  --header "Authorization: Token token=BAhJIiU3MzdjOWU4OTcwMjA3MzYzYTJiYjhmMjhhNDY3Y2FlMgY6BkVG--b39fe215b0397292d3ef4e5253480808150de267" \
+  --header "Authorization: Token token=BAhJIiUxZjcwNTljOWQxZTI5ZTIwMDkzYzEzNjJhMTBiMmRjZAY6BkVG--74a15bc4fdc2c404cf7751330362a3653157eb61" \
   --data '{
     "item": {
       "content": "DIPS",
-      "list_id": 24
+      "list_id": 53
 
     }
   }'

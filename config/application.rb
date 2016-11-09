@@ -43,8 +43,8 @@ module CapstoneApi
     cors_port = 'GA'.each_byte.reduce('') { |a, e| a + format('%d', e) }.to_i
     config.middleware.use Rack::Cors do
       allow do
-        # origins ENV['CLIENT_ORIGIN'] || "http://localhost:#{cors_port}"
-        origins ENV['CLIENT_ORIGIN'] || "https://jenboyd.github.io"
+        origins ENV['CLIENT_ORIGIN'] || "http://localhost:#{cors_port}"
+        # origins ENV['CLIENT_ORIGIN'] || "https://jenboyd.github.io"
         resource '*',
                  headers: :any,
                  methods: [:options, :get,

@@ -26,11 +26,11 @@ curl --include --request POST http://localhost:4741/lists \
 
   curl --include --request POST http://localhost:4741/lists \
     --header "Content-Type: application/json" \
-    --header "Authorization: Token token=BAhJIiU4ODcwODdmZTA3ZTY3NDBhNzE3ZDcyNmZmZWFiMTUxYgY6BkVG--e05dc6e7eddf67d07700346b3839b9028cb083ef" \
+    --header "Authorization: Token token=BAhJIiU3YmFlN2NmYThiOGNjM2FhMzYzODNmN2FjZTc1NWI1NAY6BkVG--a0061a5dea63d1d9ba36c214e99eead7adfbbb8d" \
     --data '{
       "list": {
         "name": "Lunch",
-        "party_id": 6
+        "party_id": 37
       }
     }'
 

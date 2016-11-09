@@ -32,8 +32,6 @@ class PartiesController < ProtectedController
   # PATCH/PUT /parties/1
   # PATCH/PUT /parties/1.json
   def update
-    @party = Party.find(params[:id])
-
     if @party.update(party_params)
       head :no_content
     else
