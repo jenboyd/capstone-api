@@ -18,9 +18,11 @@ class ItemsController < ProtectedController
   # POST /items
   # POST /items.json
   def create
-    @list = current_user.lists.find(item_params[:list_id])
+    # @list = current_user.lists.find(item_params[:list_id])
     # handle missing list somehow?
-    @item = @list.items.build(item_params)
+    # @item = @list.items.build(item_params)
+    @item = current_user.items.build(item_params)
+
 
     if @item.save
       render json: @item, status: :created, location: @item

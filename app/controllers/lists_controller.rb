@@ -19,9 +19,11 @@ class ListsController < ProtectedController
   # POST /lists
   # POST /lists.json
   def create
-    @party = current_user.parties.find(list_params[:party_id])
+    # @party = current_user.parties.find(list_params[:party_id])
     # handle missing party somehow?
-    @list = @party.lists.build(list_params)
+    # @list = @party.lists.build(list_params)
+    @list = current_user.lists.build(list_params)
+
 
     if @list.save
       render json: @list, status: :created, location: @list
